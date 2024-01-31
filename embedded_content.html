@@ -23,6 +23,18 @@
             }
 
             document.getElementById("response").innerHTML = response;
+            applyRandomStyles();
+        }
+
+        function applyRandomStyles() {
+            var fonts = ["Arial, sans-serif", "Times New Roman, serif", "Courier New, monospace"];
+            var colors = ["#3498db", "#2ecc71", "#e74c3c", "#f39c12", "#9b59b6"];
+
+            var randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.style.fontFamily = randomFont;
+            document.body.style.backgroundColor = randomColor;
         }
     </script>
 </head>
