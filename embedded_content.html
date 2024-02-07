@@ -23,6 +23,36 @@
             }
 
             document.getElementById("response").innerHTML = response;
+            changeStyle(response); // Call function to change style based on response
+        }
+
+        function changeStyle(response) {
+            var color, font;
+
+            switch(response) {
+                case "LOSER":
+                    color = "red";
+                    font = "Arial";
+                    break;
+                case "Average Joe":
+                    color = "blue";
+                    font = "Verdana";
+                    break;
+                case "Cool Cat":
+                    color = "green";
+                    font = "Courier New";
+                    break;
+                case "Cool? You're Ice COLD!":
+                    color = "purple";
+                    font = "Georgia";
+                    break;
+                default:
+                    color = "black";
+                    font = "Helvetica";
+            }
+
+            document.body.style.color = color;
+            document.body.style.fontFamily = font;
         }
     </script>
 </head>
@@ -32,8 +62,21 @@
     <input type="number" id="rating" name="rating" min="1" max="10">
     <button onclick="submitRating()">Submit</button>
     <p id="response"></p>
-    
-    <!-- Add an image -->
-    <img src=""C:\Users\ttsha\OneDrive\Desktop\Timbo.jpg"" alt="A descriptive text about the image">
+
+    <!-- Add a random button -->
+    <button onclick="changeRandomStyle()">Random Style</button>
+
+    <script>
+        function changeRandomStyle() {
+            var colors = ['red', 'blue', 'green', 'purple', 'black'];
+            var fonts = ['Arial', 'Verdana', 'Courier New', 'Georgia', 'Helvetica'];
+
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            var randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+
+            document.body.style.color = randomColor;
+            document.body.style.fontFamily = randomFont;
+        }
+    </script>
 </body>
 </html>
